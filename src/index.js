@@ -1,17 +1,17 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import ReactDOM from "react-dom/client";
 
-import App from './App';
-import { CartProvider } from './contexts/cart.context';
-import { store } from './store/store';
+import App from "./App";
+import { CartProvider } from "./contexts/cart.context";
+import { store } from "./store/store";
 
-import './index.scss';
+import "./index.scss";
 
-const rootElement = document.getElementById('root');
+const rootElement = ReactDOM.createRoot(document.getElementById("root"));
 
-render(
+rootElement.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -20,6 +20,5 @@ render(
         </CartProvider>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>,
-  rootElement
+  </React.StrictMode>
 );
